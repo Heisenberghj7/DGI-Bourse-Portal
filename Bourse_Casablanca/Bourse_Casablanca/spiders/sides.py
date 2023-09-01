@@ -27,7 +27,7 @@ class Sides_details(scrapy.Spider):
         Pourcentage= response.css("div#emetteur_actionnaires > div > div > div > div > div > table > tbody > tr > td > span::text").getall()
         Info_key = response.css("div#emetteur_société > div > div > div > div > div > table > tbody > tr > th::text").getall()
         Info_value = response.css("div#emetteur_société > div > div > div > div > div > table > tbody > tr > td::text").getall()
-        paragraph= response.css("div#emetteur_société > div > div > div > div > div > table > tbody > tr > td > div > p::text").getall()
+        paragraph= response.css("div#emetteur_société > div > div > div > div > div > table > tbody > tr > td > div > p::text,div#emetteur_société > div > div > div > div > div > table > tbody > tr > td > div::text,div#emetteur_société > div > div > div > div > div > table > tbody > tr > td > p > ul li::text,div#emetteur_société > div > div > div > div > div > table > tbody > tr > td > div > ul li::text").getall()
         key_figures= response.css("div#emetteur_CC > div > div > div > div > table > tbody > tr > td:nth-of-type(1)::text").getall()
         y2022 = response.css("div#emetteur_CC > div > div > div > div > table > tbody > tr > td:nth-of-type(2)::text,div#emetteur_CC > div > div > div > div > table > tbody > tr > td:nth-of-type(2) > span::text").getall()
         y2021 = response.css("div#emetteur_CC > div > div > div > div > table > tbody > tr > td:nth-of-type(3)::text,div#emetteur_CC > div > div > div > div > table > tbody > tr > td:nth-of-type(3) > span::text").getall()
@@ -89,9 +89,7 @@ class Sides_details(scrapy.Spider):
             "Intention_of_the_declarant":Intention_of_the_declarant,
             "Publications_page":"https://www.casablanca-bourse.com"+Publications_page,
             "instrument_link":"https://www.casablanca-bourse.com"+instrument_link
-
-
-        }
+}
 
 # class Publications(scrapy.Spider):
 #     name="Publications"
@@ -112,30 +110,30 @@ class Sides_details(scrapy.Spider):
 #         }
 
 
-class Instrument(scrapy.Spider):
-    name="Instrument"
-    with open('sides_details.json', 'r',encoding="utf8") as f:
-        data= json.load(f)
-    start_urls=[item['instrument_link'] for item in data]
-    def parse(self, response):
-        Instrument_Information_keys= response.css("div#instrument-info > div > div > div > div > div > table > tbody > tr > th::text").getall()
-        Instrument_Information_values= response.css("div#instrument-info > div > div > div > div > div > table > tbody > tr > td::text,div#instrument-info > div > div > div > div > div > table > tbody > tr > td > span::text").getall()
-        Session_data_keys=response.css("div#instrument-data> div > div > div > div > div > table > tbody > tr > th::text").getall()
-        Session_data_values=response.css("div#instrument-data > div > div > div > div > div > table > tbody > tr > td > span::text,div#instrument-data > div > div > div > div > div > table > tbody > tr > td::text").getall()
-        data_history_keys=response.css("div#instrument-histo-var > div > div > div > div > div > table > tbody > tr > th::text").getall()
-        data_history_values=response.css("div#instrument-histo-var > div > div > div > div > div > table > tbody > tr > td > span::text").getall()
-        instrument_notices_link= response.css("div#instrument-avis > div > div > div > div > div:nth-of-type(3) > a::attr(href)").get()
+# class Instrument(scrapy.Spider):
+#     name="Instrument"
+#     with open('sides_details.json', 'r',encoding="utf8") as f:
+#         data= json.load(f)
+#     start_urls=[item['instrument_link'] for item in data]
+#     def parse(self, response):
+#         Instrument_Information_keys= response.css("div#instrument-info > div > div > div > div > div > table > tbody > tr > th::text").getall()
+#         Instrument_Information_values= response.css("div#instrument-info > div > div > div > div > div > table > tbody > tr > td::text,div#instrument-info > div > div > div > div > div > table > tbody > tr > td > span::text").getall()
+#         Session_data_keys=response.css("div#instrument-data> div > div > div > div > div > table > tbody > tr > th::text").getall()
+#         Session_data_values=response.css("div#instrument-data > div > div > div > div > div > table > tbody > tr > td > span::text,div#instrument-data > div > div > div > div > div > table > tbody > tr > td::text").getall()
+#         data_history_keys=response.css("div#instrument-histo-var > div > div > div > div > div > table > tbody > tr > th::text").getall()
+#         data_history_values=response.css("div#instrument-histo-var > div > div > div > div > div > table > tbody > tr > td > span::text").getall()
+#         instrument_notices_link= response.css("div#instrument-avis > div > div > div > div > div:nth-of-type(3) > a::attr(href)").get()
 
-        yield {
-            "Instrument_Information_keys":Instrument_Information_keys,
-            "Instrument_Information_values":Instrument_Information_values,
-            "Session_data_keys" :Session_data_keys,
-            "Session_data_values":Session_data_values,
-            "data_history_keys":data_history_keys,
-            "data_history_values":data_history_values,
-            "instrument_notices_link":"https://www.casablanca-bourse.com"+instrument_notices_link
+#         yield {
+#             "Instrument_Information_keys":Instrument_Information_keys,
+#             "Instrument_Information_values":Instrument_Information_values,
+#             "Session_data_keys" :Session_data_keys,
+#             "Session_data_values":Session_data_values,
+#             "data_history_keys":data_history_keys,
+#             "data_history_values":data_history_values,
+#             "instrument_notices_link":"https://www.casablanca-bourse.com"+instrument_notices_link
 
-        }
+        # }
 # class Instrument_notices(scrapy.Spider):
 #     name="Instrument_notices"
 #     with open('instrument.json', 'r',encoding="utf8") as f:
