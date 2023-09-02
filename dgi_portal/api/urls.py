@@ -3,7 +3,7 @@ from .views import *
 
 urlpatterns = [
     path('', home),
-    path('dashboard', dashboard),
+    path('dashboard', DashboardView.as_view()),
     path('actionnaire', actionnaire),
     path('companies', companies),
     path('chiffres', chiffres),
