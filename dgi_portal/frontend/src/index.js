@@ -1,1 +1,1 @@
-import Navbar from "./components/Navbar";
+import _Navbar from "./components/navbar";
