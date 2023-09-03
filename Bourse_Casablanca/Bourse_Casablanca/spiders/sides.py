@@ -38,8 +38,7 @@ class Sides_details(scrapy.Spider):
         yy2021 = response.css("div#emetteur_ratio > div > div > div > div > div > table > tbody > tr > td:nth-of-type(3) span::text, div#emetteur_ratio > div > div > div > div > div > table > tbody > tr > td:nth-of-type(3)::text").getall()
         yy2020 = response.css("div#emetteur_ratio > div > div > div > div > div > table > tbody > tr > td:nth-of-type(4) span::text, div#emetteur_ratio > div > div > div > div > div > table > tbody > tr > td:nth-of-type(4)::text").getall()
         investors_keys= response.css("div#emetteur_contact > div > div > div > div > div > div > p:nth-of-type(1)::text").getall()
-        investors_values= response.css("div#emetteur_contact > div > div > div > div > div > div > p:nth-of-type(2)::text").getall()
-        mail_website=response.css("div#emetteur_contact > div > div > div > div > div > div > p:nth-of-type(2) > a::text").getall()
+        investors_values= response.css("div#emetteur_contact > div > div > div > div > div > div > p:nth-of-type(2)::text,div#emetteur_contact > div > div > div > div > div > div > p:nth-of-type(2) > a::text").getall()
         dividend_years=response.css("div#emetteur_dividendes > div > div > div > div > div > div > table > tbody > tr > td:nth-of-type(1) > p::text").getall()
         Dividend_amount = response.css("div#emetteur_dividendes > div > div > div > div > div > div > table > tbody > tr > td:nth-of-type(2) > p > span::text").getall()
         Dividend_type = response.css("div#emetteur_dividendes > div > div > div > div > div > div > table > tbody > tr > td:nth-of-type(3) > p::text").getall()
@@ -74,7 +73,6 @@ class Sides_details(scrapy.Spider):
             "y2020":yy2020,
             "investors_keys":investors_keys,
             "investors_values":investors_values,
-            "mail_website":mail_website,
             "Dividend_years":dividend_years,
             "Dividend_amount":Dividend_amount,
             "Dividend_type":Dividend_type,
