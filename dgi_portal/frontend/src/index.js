@@ -1,1 +1,1 @@
-import _Navbar from "./components/navbar";
+import _App from "./components/App";
