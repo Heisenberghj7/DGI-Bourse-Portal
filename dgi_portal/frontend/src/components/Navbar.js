@@ -12,7 +12,7 @@ export default class Navbar extends Component {
           <nav id="navbar" class="navbar">
             <ul>
               <li><a class="active " href="index.html">Home</a></li>
-              <li><a href="Dashboard.html">Dashboard</a></li>
+              <li><a href="http://127.0.0.1:8000/api/dashboard">Dashboard</a></li>
               <li><a href="Actionnaire.html">Actionnaire</a></li>
               <li><a href="Companies.html">Companies</a></li>
               <li><a href="Publications.html">Publications</a></li>
