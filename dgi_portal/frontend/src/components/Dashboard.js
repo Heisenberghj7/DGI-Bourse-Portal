@@ -6,10 +6,6 @@ export default class Dashboard extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <p>This is the dashboard page</p>
-      </div>
-    );
+    return <p>This is the dashboard page</p>;
   }
 }

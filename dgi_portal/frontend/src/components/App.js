@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 import HomePage from "./HomePage";
+import Dashboard from "./Dashboard";
 
 export default class App extends Component {
   constructor(props) {
@@ -16,5 +17,9 @@ export default class App extends Component {
   }
 }
 
-const HomePageDiv = document.getElementById("HomePage");
-render(<App />, HomePageDiv);
+
+const appDiv = document.getElementById("app");
+render(<App />, appDiv);
+
+// const HomePageDiv = document.getElementById("HomePage");
+// render(<App />, HomePageDiv);
