@@ -1,7 +1,7 @@
 from django.db import models
 
 class Company(models.Model):
-    name = models.CharField(max_length=20, default="", unique=True)
+    name = models.CharField(max_length=20, default="", unique=True, primary_key=True)
     address = models.CharField(max_length=100, null=True)
     external_auditor = models.CharField(max_length=50, null=True)
     fiscal_year_length = models.IntegerField(null=False, default=1)
