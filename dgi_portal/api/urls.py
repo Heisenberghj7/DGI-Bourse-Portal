@@ -13,3 +13,4 @@ urlpatterns = [
     path('dividende', dividende),
     path('emissions', emissions),
 ]
+

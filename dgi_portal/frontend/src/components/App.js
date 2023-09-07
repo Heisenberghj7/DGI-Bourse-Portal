@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import HomePage from "./HomePage";
 import Dashboard from "./Dashboard";
+import { BrowserRouter as Router,Switch,Route,Link,Redirect,} from "react-router-dom";
 
 export default class App extends Component {
   constructor(props) {
@@ -11,7 +12,8 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <HomePage />
+          <HomePage />
+          <Dashboard />
       </div>
     );
   }
@@ -20,6 +22,3 @@ export default class App extends Component {
 
 const appDiv = document.getElementById("app");
 render(<App />, appDiv);
-
-// const HomePageDiv = document.getElementById("HomePage");
-// render(<App />, HomePageDiv);
