@@ -1,15 +1,15 @@
 from django.db import models
 
 class Company(models.Model):
-    name = models.CharField(max_length=20, default="", unique=True, primary_key=True)
-    address = models.CharField(max_length=100, null=True)
-    external_auditor = models.CharField(max_length=50, null=True)
+    name = models.CharField(max_length=1000, default="", unique=True, primary_key=True)
+    address = models.CharField(max_length=1000, null=True)
+    external_auditor = models.CharField(max_length=1000, null=True)
     fiscal_year_length = models.IntegerField(null=False, default=1)
     creation_date = models.DateField(null=True, default=None)
     ipo_date = models.DateField(null=True, default=None)
-    social_object = models.CharField(max_length=1000, unique=True)
-    publications_page = models.CharField(max_length=150, default="")
-    instrument_link = models.CharField(max_length=150, default="")
+    social_object = models.CharField(max_length=10000, )
+    publications_page = models.CharField(max_length=1000, default="")
+    instrument_link = models.CharField(max_length=1000, default="")
 
 class Management(models.Model):
     company = models.ForeignKey(Company, on_delete=models.PROTECT)
