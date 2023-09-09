@@ -13,21 +13,21 @@ class Company(models.Model):
 
 class Management(models.Model):
     company = models.ForeignKey(Company, on_delete=models.PROTECT)
-    name = models.CharField(max_length=20, default="", unique=True)
-    post = models.CharField(max_length=20, default="", unique=False)
+    name = models.CharField(max_length=1000, default="", unique=False)
+    post = models.CharField(max_length=1000, default="", unique=False)
 
 class Shareholder(models.Model):
     company = models.ForeignKey(Company, on_delete=models.PROTECT)
-    holder = models.CharField(max_length=20, default="", unique=True)
-    percentage = models.DecimalField(max_digits=5, decimal_places=2)
+    holder = models.CharField(max_length=100, default="", unique=False)
+    percentage = models.CharField(max_length=100, default="", unique=False)
 
 class Contact(models.Model):
     company = models.ForeignKey(Company, on_delete=models.PROTECT)
-    name = models.CharField(max_length=30, default="", unique=True)
-    mail = models.CharField(max_length=30, default="", unique=True)
-    phone = models.CharField(max_length=20, default="", unique=True)
-    fax = models.CharField(max_length=20, default="", unique=True)
-    website = models.CharField(max_length=30, default="", unique=True)
+    name = models.CharField(max_length=1000, default="", unique=False)
+    mail = models.CharField(max_length=1000, default="", unique=False)
+    phone = models.CharField(max_length=1000, default="", unique=False)
+    fax = models.CharField(max_length=1000, default="", unique=False)
+    website = models.CharField(max_length=1000, default="", unique=False)
 
 class KeyFigures(models.Model):
     company = models.ForeignKey(Company, on_delete=models.PROTECT)
