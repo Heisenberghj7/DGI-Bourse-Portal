@@ -28,5 +28,5 @@ with workflow:
 		bash_command= 'ls'
     )
 
-    scrap >> clean >> ingest
+    scrap >> clean >> ingest 
 
