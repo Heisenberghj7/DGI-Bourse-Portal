@@ -8,8 +8,8 @@ from airflow.operators.python import PythonOperator
 
 workflow = DAG(
     "Pipeline",
-    schedule_interval="0 6 1,15 * *",
-    start_date=datetime(2023, 7, 1)
+    schedule_interval="0 6 1 * *",
+    start_date=datetime(2023, 9, 1)
 )
 
 with workflow:
