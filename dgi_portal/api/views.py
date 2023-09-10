@@ -1,49 +1,59 @@
-from django.shortcuts import render
 from rest_framework import generics
-from .serializers import CompanySerializer
-from .models import Company
-from django.http import HttpResponse
+from .models import Company, Management, Shareholder, Contact, KeyFigures, Ratios, Dividend
+from .serializers import CompanySerializer, ManagementSerializer, ShareholderSerializer, ContactSerializer, KeyFiguresSerializer, RatiosSerializer, DividendSerializer
 
-# Create your views here.
-def home(request):
-    return HttpResponse("Home Page")
-class DashboardView(generics.ListAPIView):
+class CompanyListView(generics.ListAPIView):
     queryset = Company.objects.all()
     serializer_class = CompanySerializer
-def actionnaire(request):
-    return HttpResponse("actionnaire")
-def companies(request):
-    return HttpResponse("companies")
-def chiffres(request):
-    return HttpResponse("chiffres")
-def ratios(request):
-    return HttpResponse("ratios")
-def retourner(request):
-    return HttpResponse("retourner")
-def publications(request):
-    return HttpResponse("publications")
-def dividende(request):
-    return HttpResponse("dividende")
-def emissions(request):
-    return HttpResponse("emissions")
+class CompanyDetailView(generics.RetrieveAPIView):
+    queryset = Company.objects.all()
+    serializer_class = CompanySerializer
 
-""" Concrete View Classes
-#CreateAPIView
-Used for create-only endpoints.
-#ListAPIView
-Used for read-only endpoints to represent a collection of model instances.
-#RetrieveAPIView
-Used for read-only endpoints to represent a single model instance.
-#DestroyAPIView
-Used for delete-only endpoints for a single model instance.
-#UpdateAPIView
-Used for update-only endpoints for a single model instance.
-##ListCreateAPIView
-Used for read-write endpoints to represent a collection of model instances.
-RetrieveUpdateAPIView
-Used for read or update endpoints to represent a single model instance.
-#RetrieveDestroyAPIView
-Used for read or delete endpoints to represent a single model instance.
-#RetrieveUpdateDestroyAPIView
-Used for read-write-delete endpoints to represent a single model instance.
-"""
+
+class ManagementListView(generics.ListAPIView):
+    queryset = Management.objects.all()
+    serializer_class = ManagementSerializer
+class ManagementDetailView(generics.RetrieveAPIView):
+    queryset = Management.objects.all()
+    serializer_class = ManagementSerializer
+
+
+class ShareholderListView(generics.ListAPIView):
+    queryset = Shareholder.objects.all()
+    serializer_class = ShareholderSerializer
+class ShareholderDetailView(generics.RetrieveAPIView):
+    queryset = Shareholder.objects.all()
+    serializer_class = ShareholderSerializer
+
+
+class ContactListView(generics.ListAPIView):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
+class ContactDetailView(generics.RetrieveAPIView):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
+
+
+class KeyFiguresListView(generics.ListAPIView):
+    queryset = KeyFigures.objects.all()
+    serializer_class = KeyFiguresSerializer
+class KeyFigureslView(generics.RetrieveAPIView):
+    queryset = KeyFigures.objects.all()
+    serializer_class = KeyFiguresSerializer
+
+
+
+class RatiosListView(generics.ListAPIView):
+    queryset = Ratios.objects.all()
+    serializer_class = RatiosSerializer
+class RatioslView(generics.RetrieveAPIView):
+    queryset = Ratios.objects.all()
+    serializer_class = RatiosSerializer
+
+
+class DividendListView(generics.ListAPIView):
+    queryset = Dividend.objects.all()
+    serializer_class = DividendSerializer
+class DividendlView(generics.RetrieveAPIView):
+    queryset = Dividend.objects.all()
+    serializer_class = DividendSerializer
