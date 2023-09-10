@@ -52,8 +52,8 @@ class Ratios(models.Model):
 
 class Dividend(models.Model):
     company = models.ForeignKey(Company, on_delete=models.PROTECT)
-    year = models.CharField(max_length=30, default="", unique=True)
-    amount = models.DecimalField(max_digits=10, decimal_places=2)
-    dividend_type = models.CharField(max_length=30, default="", unique=True)
+    year = models.CharField(max_length=100, default="", unique=False)
+    amount = models.CharField(max_length=100, default="", unique=False)
+    dividend_type = models.CharField(max_length=100, default="", unique=False)
     ex_date = models.DateField(null=True, default=None)
     payment_date = models.DateField(null=True, default=None)
