@@ -87,25 +87,31 @@ class Sides_details(scrapy.Spider):
             "Intention_of_the_declarant":Intention_of_the_declarant,
             "Publications_page":"https://www.casablanca-bourse.com"+Publications_page,
             "instrument_link":"https://www.casablanca-bourse.com"+instrument_link
+            
 }
 
-# class Publications(scrapy.Spider):
-#     name="Publications"
-#     with open('sides_details.json', 'r',encoding="utf8") as f:
-#         data= json.load(f)
-#     start_urls=[item['Publications_page'] for item in data]
-#     def parse(self, response):
-#         Issuer_name = 
-#         Publication_date= 
-#         Publication_title= 
-#         publications= 
-#         yield{
-#             "Issuer_name":Issuer_name,
-#             "Publication_date":Publication_date,
-#             "Publication_title":Publication_title,
-#             "publications":publications
+class Publications(scrapy.Spider):
+    name="Publications"
+    with open('sides.json', 'r') as f:
+        data= json.load(f)
+    start_urls=[item['link'] for item in data]
 
-#         }
+    def parse(self, response):
+        Issuer_name = response.css("div.md\\:-ml-5.md\\:-mr-7 > div > h1::text").get()
+        Publication_date= response.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[14]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/p[2]/text()").get()
+        Publication_title= response.css("div.w-full > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > a > h3::text").get()
+        if 'CP' in Publication_title:
+            publication_link= response.css("div.w-full > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > a::attr(href)").get()
+        else:
+            Publication_title= response.css("div.w-full > div > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > a > h3::text").get()
+            publication_link= response.css("div.w-full > div > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > a::attr(href)").get()
+        yield{
+            "Issuer_name":Issuer_name,
+            "Publication_date":Publication_date,
+            "Publication_title":Publication_title,
+            "publication_link":publication_link
+
+        }
 
 
 # class Instrument(scrapy.Spider):
