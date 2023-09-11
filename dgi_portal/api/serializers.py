@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Company, Management, Shareholder, Contact, KeyFigures, Ratios, Dividend
+from .models import Company, Management, Shareholder, Contact, KeyFigures, Ratios, Dividend,Publications
 
 class CompanySerializer(serializers.ModelSerializer):
     class Meta:
@@ -34,4 +34,9 @@ class RatiosSerializer(serializers.ModelSerializer):
 class DividendSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dividend
+        fields = '__all__'
+
+class PublicationsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Publications
         fields = '__all__'

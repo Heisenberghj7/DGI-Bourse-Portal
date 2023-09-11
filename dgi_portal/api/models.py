@@ -57,3 +57,11 @@ class Dividend(models.Model):
     dividend_type = models.CharField(max_length=100, default="", unique=False)
     ex_date = models.DateField(null=True, default=None)
     payment_date = models.DateField(null=True, default=None)
+
+class Publications(models.Model):
+    company = models.ForeignKey(Company, on_delete=models.PROTECT)
+    date = models.DateField(null=True, default=None)
+    title = models.CharField(max_length=100, default="", unique=False)
+    link = models.CharField(max_length=1000, default="", unique=False)
+    doc_info = models.CharField(max_length=1000, default="", unique=False)
+    
