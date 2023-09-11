@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import CompanyListView, CompanyDetailView,ManagementListView,ManagementDetailView,ShareholderDetailView,ShareholderListView,ContactDetailView,ContactListView,KeyFigureslView,KeyFiguresListView,RatioslView,RatiosListView,DividendlView,DividendListView
+from .views import CompanyListView, CompanyDetailView,ManagementListView,ManagementDetailView,ShareholderDetailView,ShareholderListView,ContactDetailView,ContactListView,KeyFigureslView,KeyFiguresListView,RatioslView,RatiosListView,DividendlView,DividendListView,PublicationslView,PublicationsListView
 
 urlpatterns = [
     path('companies/', CompanyListView.as_view(), name='company-list'),
@@ -16,4 +16,6 @@ urlpatterns = [
     path('ratios/<pk>/', RatioslView.as_view(), name='ratios-detail'),
     path('dividend/', DividendListView.as_view(), name='Dividend-list'),
     path('dividend/<pk>/', DividendlView.as_view(), name='Dividend-detail'),
+    path('publications/', PublicationsListView.as_view(), name='Dividend-list'),
+    path('publications/<pk>/', PublicationslView.as_view(), name='Dividend-detail'),
 ]

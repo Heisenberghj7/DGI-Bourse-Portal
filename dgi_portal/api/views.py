@@ -1,6 +1,6 @@
 from rest_framework import generics
-from .models import Company, Management, Shareholder, Contact, KeyFigures, Ratios, Dividend
-from .serializers import CompanySerializer, ManagementSerializer, ShareholderSerializer, ContactSerializer, KeyFiguresSerializer, RatiosSerializer, DividendSerializer
+from .models import Company, Management, Shareholder, Contact, KeyFigures, Ratios, Dividend, Publications
+from .serializers import CompanySerializer, ManagementSerializer, ShareholderSerializer, ContactSerializer, KeyFiguresSerializer, RatiosSerializer, DividendSerializer,PublicationsSerializer
 
 class CompanyListView(generics.ListAPIView):
     queryset = Company.objects.all()
@@ -57,3 +57,10 @@ class DividendListView(generics.ListAPIView):
 class DividendlView(generics.RetrieveAPIView):
     queryset = Dividend.objects.all()
     serializer_class = DividendSerializer
+
+class PublicationsListView(generics.ListAPIView):
+    queryset = Publications.objects.all()
+    serializer_class = PublicationsSerializer
+class PublicationslView(generics.RetrieveAPIView):
+    queryset = Publications.objects.all()
+    serializer_class = PublicationsSerializer
