@@ -23,10 +23,15 @@ with workflow:
 		bash_command= 'ls'
     )
 
-    ingest = BashOperator(
-		task_id='ingest_data_database',
-		bash_command= 'ls'
+    nlp = BashOperator(
+		task_id='NLP',
+		bash_command= 'curl'
     )
 
-    scrap >> clean >> ingest 
+    ingest = BashOperator(
+		task_id='ingest_data_database',
+		bash_command= 'whoami'
+    )
+
+    scrap >> clean >> nlp >> ingest 
 
