@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="topnav">
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a class="active" href="Acceuil.html">Home</a>
+    </div>
+
+    <h2 id="company-name"></h2>
+    <button onclick="fetchDetails('shareholder')">Shareholder</button>
+    <button onclick="fetchDetails('contact')">Contact</button>
+    <button onclick="fetchDetails('management')">Management</button>
+    <button onclick="fetchDetails('companies')">Information</button>
+       
+    <table id="details-table">
+        <!-- Details will be inserted here -->
+    </table>
+    <script src="details.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+body{
+  background: #031030;
+}
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: white;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #071F5F;
+  color: white;
+}
+
+.page-desc{
+  margin-left: 188px;
+  margin-top: 100px;
+  margin-right: 504px;
+  height:273px;
+  width: 600px;
+  color: #FFF;
+  font-family: Inter;
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.dashboard-button {
+  background-color: #071F5F;
+  color: white;
+  border: none;
+  height: 60px;
+  width: 310px;
+  font-weight: bold;
+  font-size: 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  position: absolute;
+  left:655px;
+  top:500px;
+  transition: background-color 0.15s;
+}
+
+.dashboard-button:hover {
+  background-color: rgb(10, 102, 194);
+}
+
+#acceuil_image {
+  /* Sample positioning */
+  position: absolute; /* or 'relative' depending on parent positioning */
+  top: 185px;          /* Distance from the top of the parent element */
+  left: 1100px;        /* Distance from the left of the parent element */
+  width: 400px;       /* Adjust as needed */
+  height: auto;       /* Maintains image aspect ratio */
+}
+

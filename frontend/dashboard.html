@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Data</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="topnav">
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a class="active" href="Acceuil.html">Home</a>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Sales Figures (N-1)</th>
+                <th>Net income (N-1)</th>
+                <th>Title</th>
+                <th>Doc Info</th>
+            </tr>
+        </thead>
+        <tbody id="data-table">
+            <!-- Data will be inserted here -->
+        </tbody>
+    </table>
+    <div id="details-section" hidden>
+      <h2 id="company-name"></h2>
+      <button onclick="fetchDetails('shareholder')">Shareholder</button>
+      <button>Contact</button>
+      <table id="details-table">
+          <!-- Details will be inserted here -->
+      </table>
+  </div>
+  
+    <script src="script.js"></script>
+</body>
+</html>

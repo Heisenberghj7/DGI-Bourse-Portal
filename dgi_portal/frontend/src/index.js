@@ -1,1 +1,0 @@
-import _App from "./components/App";
