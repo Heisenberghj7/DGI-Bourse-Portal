@@ -6,7 +6,7 @@
 
 **`Problem Statement`** : 
 
-
+<p>The Ministry of Economy and Finance's objective to enhance transparency and accessibility to financial data of major companies in Morocco through the creation of a comprehensive dashboard presents several challenges. These challenges include the need to efficiently gather, process, and update data from communiqués de presse, integrate intricate financial information into user-friendly tables, and ensure that the resulting website effectively communicates complex financial metrics to users. Addressing these challenges is critical to achieving the goal of facilitating transparent and accessible financial data for large companies in Morocco.</p>
 
 - 🎯 **`Business Goal`** : 
 
@@ -17,6 +17,9 @@
 > - Dashboard with latest communiqué de presse details
 > - Comprehensive tables with vital company metrics
 > - Intuitive design for easy navigation
+
+- 🎯 **`DGI Portal Demo`** :
+
 
 - 📫 Feel free to contact me if anything is wrong or if anything needs to be changed 😎!  **medhajjari9@gmail.com**
 
