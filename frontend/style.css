@@ -77,3 +77,11 @@ body{
   height: auto;       /* Maintains image aspect ratio */
 }
 
+#mef_maroc {
+  position: absolute;
+  top: 9px;
+  left: 50px;
+  width: 90px;
+  height: auto;
+}
+
