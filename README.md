@@ -19,7 +19,13 @@
 > - Intuitive design for easy navigation
 
 - 🎯 **`DGI Portal Demo`** :
-  
+
+  https://github.com/Heisenberghj7/DGI-Bourse-Portal/assets/92522277/0abb7246-42dd-43af-aad9-f246ab636695
+
 - 📫 Feel free to contact me if anything is wrong or if anything needs to be changed 😎!  **medhajjari9@gmail.com**
 
 <a href="https://colab.research.google.com/github/heisenberghj7/DGI-Bourse-Portal/" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
+### 🤝🏻 **`Collaborators`** : 
+ - HAJJARI Mohammed
+ - BENCHERIF Mounir
