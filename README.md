@@ -19,8 +19,8 @@
 > - Intuitive design for easy navigation
 
 - 🎯 **`DGI Portal Demo`** :
-
-  https://github.com/Heisenberghj7/DGI-Bourse-Portal/assets/92522277/0abb7246-42dd-43af-aad9-f246ab636695
+  
+https://github.com/Heisenberghj7/DGI-Bourse-Portal/assets/92522277/c6b2f5e8-e777-4e03-948e-9af6de363e55
 
 - 📫 Feel free to contact me if anything is wrong or if anything needs to be changed 😎!  **medhajjari9@gmail.com**
 
