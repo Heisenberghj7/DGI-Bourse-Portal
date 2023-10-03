@@ -26,6 +26,6 @@
 
 <a href="https://colab.research.google.com/github/heisenberghj7/DGI-Bourse-Portal/" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-# 🤝🏻 **`Collaborators`** : 
+### 🤝🏻 **`Collaborators`** : 
  - HAJJARI Mohammed
  - BENCHERIF Mounir
